@@ -1,0 +1,16 @@
+Simple math: 3949866
+String concat: 9436992
+Array + array: 357543
+Use array_merge: 159155
+Create empty object: 2457365
+Foreach array: 11579985
+Use array_walk: 4862711
+Foreach array object: 3474816
+Foreach simple object: 3153754
+Call object function: 4912326
+Call user function: 6863228
+Function rand: 6782196
+Function is_null: 4402611
+Function empty: 16967840
+Function isset: 17604184
+Call closure: 7279269
