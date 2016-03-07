@@ -1,16 +1,16 @@
-Simple math: 3636475
-String concat: 9853240
-Array + array: 330814
-Use array_merge: 151585
-Create empty object: 2257946
-Foreach array: 10566621
-Use array_walk: 4898327
-Foreach array object: 3496945
-Foreach simple object: 3114132
-Call object function: 5084253
-Call user function: 7125006
-Function rand: 7029306
-Function is_null: 4316429
-Function empty: 17486233
-Function isset: 18114799
-Call closure: 7074885
+Simple math: 4993559
+String concat: 9347619
+Array + array: 382902
+Use array_merge: 302549
+Create empty object: 3764803
+Foreach array: 14498704
+Use array_walk: 4483568
+Foreach array object: 4689545
+Foreach simple object: 4489987
+Call object function: 6897637
+Call user function: 8323240
+Function rand: 9289655
+Function is_null: 5317701
+Function empty: 19898070
+Function isset: 20981276
+Call closure: 6624944
