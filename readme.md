@@ -1,7 +1,59 @@
 # php-benchmark
+
 Набор тестов для проверки производительности PHP. С помощью benchmark.php можно оценить производительность хостинга, сравнить скорость работы разных версий PHP.
 
-## Пример использования
+С помощью теста удобно оценивать общую производительность сервера, а также сравнивать разные версии PHP. Однако, нужно понимать, что эти тесты являются ситетическими, по ним нельзя оценить производтельность реальных приложений. Но можно сравнить разных хостеров, если на серверах установлены одинаковые версии PHP.
+
+## Быстрый старт
+
+Протестировать все системные версии PHP:
+
+```bash
+wget -qO- https://raw.githubusercontent.com/anton-pribora/php-benchmark/master/get_and_start_multitest.sh | bash
+```
+
+Протестировать указанные версии PHP:
+
+```bash
+wget -qO- https://raw.githubusercontent.com/anton-pribora/php-benchmark/master/get_and_start_multitest.sh | bash php5.6 php7.4
+```
+
+Скрипт скачает бенчмарк и мультитест в папку /tmp, после чего запустит тесты.
+
+Пример запуска:
+
+```bash
+$ ./get_and_start_multitest.sh /usr/bin/php* ~/test2/php-src/sapi/cli/php
+Testing PHP 5.6.40 ... done
+Testing PHP 7.3.12 ... done
+Testing PHP 7.4.0 ... done
+Testing PHP 8.0.0 ... done
+AMD Ryzen 7 2700 Eight-Core Processor  Units     PHP 5.6.40  PHP 7.3.12  PHP 7.4.0   PHP 8.0.0
+Simple math                            oper/sec  10,854,474  16,985,633  16,848,437  167,913,419
+String concat                          oper/sec  15,040,862  13,284,544  13,644,075  51,065,321
+Array + array                          oper/sec  1,106,521   2,503,988   2,552,109   3,585,115
+Use array_merge                        oper/sec  661,500     1,389,261   1,497,644   3,632,503
+Create empty object                    obj/sec   6,906,456   2,602,294   8,701,608   27,962,074
+Foreach array                          iter/sec  16,336,167  32,501,948  29,966,397  121,715,210
+Use array_walk                         iter/sec  2,825,851   2,610,945   2,683,153   16,560,682
+Foreach array object                   iter/sec  7,576,593   8,189,503   8,034,629   21,243,940
+Foreach simple object                  iter/sec  7,436,535   10,661,587  10,629,987  48,841,167
+Call closure                           call/sec  1,544,574   1,084,538   1,254,531   42,988,544
+Call object function                   call/sec  2,493,997   2,075,726   2,460,575   80,364,105
+Call user function                     call/sec  2,562,125   2,136,204   2,455,150   82,173,421
+Function rand                          call/sec  3,284,780   2,849,542   3,311,249   79,713,543
+Function is_null                       call/sec  2,978,263   12,351,476  11,140,412  109,887,526
+Function empty                         call/sec  21,325,568  14,333,979  13,560,208  106,165,381
+Function isset                         call/sec  21,586,539  13,219,264  14,131,442  143,211,399
+```
+
+Чтобы удалить скрипты из папки /tmp выполните:
+
+```bash
+rm /tmp/multitest.php /tmp/benchmark.php
+```
+
+## Пример использования bemchmark.php
 Запуск тестов из консоли без загрузки скрипта:
 
 ```
